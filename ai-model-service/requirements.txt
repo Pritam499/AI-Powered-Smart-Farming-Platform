@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-multipart        # for file uploads
+pillow                  # image handling
+numpy
+tensorflow-cpu>=2.9.1   # or tensorflow-gpu if you have GPU
+onnxruntime             # for ONNX yield model
+torch                   # for chatbot transformer
+transformers
