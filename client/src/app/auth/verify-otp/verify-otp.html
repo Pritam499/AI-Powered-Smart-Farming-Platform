@@ -1,0 +1,19 @@
+<div class="max-w-md mx-auto p-6 bg-white rounded shadow mt-12">
+  <h2 class="text-2xl font-bold mb-4">Verify OTP</h2>
+  <p class="text-sm text-gray-600 mb-4">We sent a code to <strong>{{ email }}</strong>.</p>
+  <input
+    type="text"
+    [(ngModel)]="otp"
+    maxlength="6"
+    placeholder="Enter OTP"
+    class="w-full p-2 border rounded mb-4"
+  />
+  <button
+    (click)="verify()"
+    [disabled]="!otp || loading"
+    class="w-full bg-green-600 text-white py-2 rounded disabled:opacity-50"
+  >
+    {{ loading ? 'Verifying…' : 'Verify' }}
+  </button>
+  <p *ngIf="error" class="mt-4 text-red-600">{{ error }}</p>
+</div>

@@ -1,0 +1,18 @@
+<div class="max-w-md mx-auto p-6 bg-white rounded shadow mt-12">
+  <h2 class="text-2xl font-bold mb-4">Complete Sign Up</h2>
+  <p class="text-sm text-gray-600 mb-4">Choose a display name.</p>
+  <input
+    type="text"
+    [(ngModel)]="name"
+    placeholder="Your name"
+    class="w-full p-2 border rounded mb-4"
+  />
+  <button
+    (click)="signup()"
+    [disabled]="!name || loading"
+    class="w-full bg-green-600 text-white py-2 rounded disabled:opacity-50"
+  >
+    {{ loading ? 'Signing…' : 'Sign Up' }}
+  </button>
+  <p *ngIf="error" class="mt-4 text-red-600">{{ error }}</p>
+</div>

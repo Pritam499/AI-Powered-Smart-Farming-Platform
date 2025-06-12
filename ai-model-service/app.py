@@ -96,6 +96,8 @@ import random
 from typing import List
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # Your real label set (just strings, no model required)
 LABELS = [
@@ -117,6 +119,14 @@ LABELS = [
 ]
 
 app = FastAPI(title="SmartFarm Fake‐AI Service")
+
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins=["http://localhost:4200"],  # your Angular dev
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"],
+)
 
 class Suggestion(BaseModel):
     disease: str

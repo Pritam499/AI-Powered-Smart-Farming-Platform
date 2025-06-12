@@ -1,0 +1,18 @@
+<div class="max-w-md mx-auto p-6 bg-white rounded shadow mt-12">
+  <h2 class="text-2xl font-bold mb-4">Login / Sign up</h2>
+  <p class="text-sm text-gray-600 mb-4">Enter your email to receive a one-time code.</p>
+  <input
+    type="email"
+    [(ngModel)]="email"
+    placeholder="you@example.com"
+    class="w-full p-2 border rounded mb-4"
+  />
+  <button
+    (click)="sendOtp()"
+    [disabled]="!email || loading"
+    class="w-full bg-green-600 text-white py-2 rounded disabled:opacity-50"
+  >
+    {{ loading ? 'Sending…' : 'Send OTP' }}
+  </button>
+  <p *ngIf="error" class="mt-4 text-red-600">{{ error }}</p>
+</div>

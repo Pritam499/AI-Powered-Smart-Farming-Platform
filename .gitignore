@@ -1,0 +1,7 @@
+/venv
+__pycache__
+*.pyc
+*.pyo
+/old model
+/training_data
+/training_data/PlantVillage
