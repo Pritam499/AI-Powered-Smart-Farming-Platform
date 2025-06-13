@@ -19,8 +19,8 @@ export async function predictDiseaseProxy(req, res, next) {
     form.append('crop', req.body.crop);
 
     const response = await axios.post(
-      // 'https://ai-smart-farm-ziir.onrender.com/predict-disease',
-      'http://localhost:8000/predict-disease',
+      'https://ai-powered-smart-farm-platform.vercel.app/predict-disease',
+      // 'http://localhost:8000/predict-disease',
       form,
       { headers: form.getHeaders() }
     );
