@@ -51,7 +51,7 @@
 #         raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
 
 
-
+# ai-model-service/routes/predict_disease.py
 
 import io, json, numpy as np
 from fastapi import APIRouter, File, UploadFile, HTTPException

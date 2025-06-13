@@ -15,11 +15,6 @@ def load_disease_model():
     labels = json.loads(LABELS_FILE.read_text())
     return model, labels
 
-# def predict_disease(model, labels, tensor):
-#     preds = model.predict(tensor)[0]
-#     idx = int(preds.argmax())
-#     return labels[idx], float(preds[idx])
-
 def predict_disease(model, labels, img_tensor):
     preds = model.predict(img_tensor)
     print("🔍 All predictions with confidence:")
