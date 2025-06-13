@@ -1,13 +1,13 @@
-// backend/src/controllers/auth/resendOtpController.js
+import resendOtpService from '../../services/auth/resendOtpService.js';
 import generateResponse from '../../utils/generateResponse.js';
-import * as authService from '../../services/authService.js';
 
-export async function resendOtpController(req, res, next) {
+const resendOtpController = async (req, res) => {
   try {
-    const { email } = req.body;
-    const result = await authService.resendOtp(email);
-    return res.json(generateResponse(true, null, result));
-  } catch (err) {
-    next(err);
+    const result = await resendOtpService(req.body.email);
+    res.status(200).json(generateResponse(true, result, 'OTP resent successfully.'));
+  } catch (error) {
+    res.status(400).json(generateResponse(false, {}, 'Resend OTP failed', error.message));
   }
-}
+};
+
+export default resendOtpController;
