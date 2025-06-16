@@ -1,5 +1,5 @@
-##AI-Powered Smart Farming Platform – Full Stack Project (AI + Angular + Node.js + Python + ML + Docker)
-This project is my own full-stack smart farming platform to help farmers detect leaf diseases using AI, and also track crop/yield prediction. It includes user auth, file upload for leaf images, and secure backend + AI model prediction using Python.
+### AI-Powered Smart Farming Platform – Full Stack Project (AI + Angular + Node.js + Python + ML + Docker)
+This project is my own full-stack smart farming platform designed to help farmers detect leaf diseases using AI and track crop and yield predictions. It includes user auth, file upload for leaf images, and a secure backend + AI model prediction using Python.
 
 🔧 Key Tech Stack
 Frontend: Angular (Component-based, Auth Guard, Dashboard, Try Page)
